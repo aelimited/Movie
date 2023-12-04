@@ -87,6 +87,6 @@ public class MovieOperations {
         if(!found){
             System.out.println("해당 장르의 영화를 찾을 수 없습니다.");
         }
+        }
     }
 
-}
