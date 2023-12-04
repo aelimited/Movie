@@ -7,7 +7,7 @@ public class MovieOperations {
     static MovieDTO[] moviedto = new MovieDTO[3];
 
     public static void MovieInformation(){
-
+        // 아무 주석이나 달아봅니다.
         Scanner scan = new Scanner(System.in);
         //MovieDTO를 입력받아 배열로 출력
         for(int i=0; i<moviedto.length; i++) {
