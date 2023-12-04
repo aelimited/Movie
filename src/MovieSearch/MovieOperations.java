@@ -60,12 +60,33 @@ public class MovieOperations {
 
     // 장르 검색 메서드
     public static void movieSearch(List<MovieDTO> movies) {
-        //dto 내에 있는 장르 값과 비교하여 출력
-        System.out.print("검색할 장르를 입력하세요. (1, 2, 3 중 하나) : ");
         Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
+        int genreInput ;
+
+        while (true){
+            System.out.print("검색할 장르를 입력하세요. (1, 2, 3 중 하나) : ");
+            genreInput = scan.nextInt();
+
+            // 장르가 1,2,3 중 하나인지 검증
+            if (genreInput >=1 && genreInput <= 3){
+                break; // 유효한 입력이면 for 문 탈출
+            } else {
+                System.out.println("잘못된 입력입니다. 1, 2, 3 중 하나를 입력하세요.");
+                scan.nextLine();
+            }
+        }
+        // 입력받은 장르의 영화 찾기
+        boolean found = false;
         for (MovieDTO movie : movies) {
-            if (movie.getGenre() == i) System.out.println(movie);
+            if (movie.getGenre() == genreInput) {
+                System.out.println(movie);
+                found = true;
+            }
+        }
+        // 입력받은 장르의 영화가 없는 경우
+        if(!found){
+            System.out.println("해당 장르의 영화를 찾을 수 없습니다.");
         }
     }
+
 }
