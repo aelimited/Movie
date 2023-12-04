@@ -20,7 +20,6 @@ public class MovieOperations {
             if (title.equals("-1")) {
                 break;
             }
-
             System.out.print("주인공 : ");
             String major = scan.nextLine();
 
