@@ -30,7 +30,7 @@ public class MovieProcessor {
                     mop.moviePrint(MovieOperations.movieList);
                     break;
                 case "S":
-                    mop.movieSearch();
+                    mop.movieSearch(MovieOperations.movieList);
                     break;
                 case "E":
                     System.out.println("프로그램 종료");

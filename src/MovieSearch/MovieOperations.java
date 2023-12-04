@@ -54,16 +54,18 @@ public class MovieOperations {
         }
         System.out.println("========= 영화 정보 : 평점기준 내림차순 =========");
         for (MovieDTO data : movies) {
-            System.out.println("영화: " + data.toString());
+            System.out.println(data.toString());
         }
     }
 
     // 장르 검색 메서드
-    public static void movieSearch() {
+    public static void movieSearch(List<MovieDTO> movies) {
         //dto 내에 있는 장르 값과 비교하여 출력
+        System.out.print("검색할 장르를 입력하세요. (1, 2, 3 중 하나) : ");
         Scanner scan = new Scanner(System.in);
         int i = scan.nextInt();
-        System.out.println(i);
-        //moviedto.getgener();
+        for (MovieDTO movie : movies) {
+            if (movie.getGenre() == i) System.out.println(movie);
+        }
     }
 }

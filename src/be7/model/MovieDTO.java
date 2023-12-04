@@ -60,7 +60,7 @@ public class MovieDTO {
 
     @Override
     public String toString() {
-        return String.format("'%s', 주인공: '%s', 러닝타임: %d, 평점: %.1f, 장르: %d",
+        return String.format("영화: '%s', 주인공: '%s', 러닝타임: %d, 평점: %.1f, 장르: %d",
                 this.title, this.major, this.runningTime, this.rating, this.genre);
     }
 }
