@@ -16,7 +16,10 @@ public class MovieOperations {
         while (true) {
             System.out.print("영화제목 (종료하려면 '-1' 입력) : ");
             String title = scan.nextLine();
-            if (title.equals("-1")) break;
+
+            if (title.equals("-1")) {
+                break;
+            }
 
             System.out.print("주인공 : ");
             String major = scan.nextLine();
@@ -31,6 +34,7 @@ public class MovieOperations {
 
             System.out.print("장르(1-드라마, 2-액션, 3-호러) : ");
             int genre = scan.nextInt();
+            scan.nextLine();
 
             movieList.add(new MovieDTO(title, major, runningTime, rating, genre));
         }
@@ -39,21 +43,22 @@ public class MovieOperations {
 
     // 평점을 기준으로 내림차순 정렬
     public static void moviePrint(List<MovieDTO> movies) {
-        for (int i = 0; i < movieList.size(); i++) {
-            for (int j = i + 1; j < movieList.size(); j++) {
-                if (movieList.get(i).getRating() < movieList.get(j).getRating()) {
-                    MovieDTO tmp = movieList.get(i);
-                    movieList.get(i) = movieList.get(j);
-                    movieList.get(j) = tmp;
+        for (int i = 0; i < movies.size() - 1; i++) {
+            for (int j = i + 1; j < movies.size(); j++) {
+                if (movies.get(i).getRating() < movies.get(j).getRating()) {
+                    MovieDTO tmp = movies.get(i);
+                    movies.set(i, movies.get(j));
+                    movies.set(j, tmp);
                 }
             }
         }
-        System.out.println("========= 영화 평점기준 내림차순 =========");
+        System.out.println("========= 영화 정보 : 평점기준 내림차순 =========");
         for (MovieDTO data : movies) {
-            System.out.println(data);
+            System.out.println("영화: " + data.toString());
         }
     }
 
+    // 장르 검색 메서드
     public static void movieSearch() {
         //dto 내에 있는 장르 값과 비교하여 출력
         Scanner scan = new Scanner(System.in);
