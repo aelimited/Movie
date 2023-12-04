@@ -10,7 +10,7 @@ public class MovieProcessor {
         MovieOperations mop = new MovieOperations();
 
         while (true) {
-            System.out.println("\n======== 장르별 영화 검색 프로그램(그룹 이름) ===========");
+            System.out.println("\n======== 장르별 영화 검색 프로그램(개발 오죠) ===========");
             System.out.println("" + "1.영화입력(I)" + "\t" + "2.영화출력(P)" + "\t" + "3.영화검색(S)" + "\t" + "4.입력영화 초기화(c)" + "\t"+ "5.종료(E)");
             System.out.println("=================================================");
 
