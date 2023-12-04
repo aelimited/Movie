@@ -88,5 +88,11 @@ public class MovieOperations {
             System.out.println("해당 장르의 영화를 찾을 수 없습니다.");
         }
         }
+
+        // 입력 영화 정보 초기화
+        public static void movieClear() {
+             movieList.clear();
+             System.out.println("입력 영화 정보가 초기화 되었습니다.");
+        }
     }
 
